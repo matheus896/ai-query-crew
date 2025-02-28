@@ -1,0 +1,208 @@
+tables:
+  public:
+    categorias:
+    - column_name: categoria_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: nome
+      data_type: character varying
+      is_nullable: 'NO'
+      possible_values:
+      - id: 1
+        nome: Eletrônicos
+      - id: 2
+        nome: Livros
+      - id: 3
+        nome: Esportes
+      - id: 4
+        nome: Vestuário
+      - id: 5
+        nome: Casa & Cozinha
+      - id: 6
+        nome: Jogos & Consoles
+      - id: 7
+        nome: Informática
+      - id: 8
+        nome: Beleza & Saúde
+    - column_name: descricao
+      data_type: text
+      is_nullable: 'YES'
+    - column_name: criado_em
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
+    clientes:
+    - column_name: cliente_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: primeiro_nome
+      data_type: character varying
+      is_nullable: 'NO'
+    - column_name: ultimo_nome
+      data_type: character varying
+      is_nullable: 'NO'
+    - column_name: email
+      data_type: character varying
+      is_nullable: 'NO'
+    - column_name: telefone
+      data_type: character varying
+      is_nullable: 'YES'
+    - column_name: criado_em
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
+    itens_do_pedido:
+    - column_name: item_pedido_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: pedido_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: produto_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: quantidade
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: criado_em
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
+    metodos_pagamento:
+    - column_name: metodo_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: nome
+      data_type: character varying
+      is_nullable: 'NO'
+      possible_values:
+      - id: 1
+        nome: cartao_credito
+      - id: 2
+        nome: boleto
+      - id: 3
+        nome: pix
+      - id: 4
+        nome: transferencia_bancaria
+      - id: 5
+        nome: dinheiro
+    - column_name: criado_em
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
+    pagamentos:
+    - column_name: pagamento_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: pedido_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: metodo_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: data_pagamento
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
+    - column_name: valor
+      data_type: numeric
+      is_nullable: 'NO'
+    - column_name: status_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: criado_em
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
+    pedidos:
+    - column_name: pedido_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: cliente_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: data_pedido
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
+    - column_name: status_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: criado_em
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
+    produtos:
+    - column_name: produto_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: categoria_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: nome
+      data_type: character varying
+      is_nullable: 'NO'
+    - column_name: descricao
+      data_type: text
+      is_nullable: 'YES'
+    - column_name: preco
+      data_type: numeric
+      is_nullable: 'NO'
+    - column_name: qtd_estoque
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: criado_em
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
+    remessas:
+    - column_name: remessa_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: pedido_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: transportadora_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: codigo_rastreamento
+      data_type: character varying
+      is_nullable: 'YES'
+    - column_name: data_envio
+      data_type: timestamp without time zone
+      is_nullable: 'YES'
+    - column_name: data_entrega
+      data_type: timestamp without time zone
+      is_nullable: 'YES'
+    - column_name: status_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: criado_em
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
+    status:
+    - column_name: status_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: nome
+      data_type: character varying
+      is_nullable: 'NO'
+      possible_values:
+      - id: 1
+        nome: pendente
+      - id: 2
+        nome: concluido
+      - id: 3
+        nome: cancelado
+      - id: 4
+        nome: pago
+      - id: 5
+        nome: falhou
+      - id: 6
+        nome: enviado
+      - id: 7
+        nome: entregue
+    - column_name: criado_em
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
+    transportadoras:
+    - column_name: transportadora_id
+      data_type: integer
+      is_nullable: 'NO'
+    - column_name: nome
+      data_type: character varying
+      is_nullable: 'NO'
+    - column_name: criado_em
+      data_type: timestamp without time zone
+      is_nullable: 'NO'
